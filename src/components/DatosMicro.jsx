@@ -4,7 +4,6 @@ import { LlegadaBus } from "./LlegadaBus";
 export const DatosMicro = (props) => {
   const { nombre, estado, desc_estado, buses } = props;
 
-
   return (
     <div
       className={
@@ -17,6 +16,11 @@ export const DatosMicro = (props) => {
         <div className="h5 font-weight-bold text-gray-800 mb-1">
           RECORRIDO: {nombre}
           <hr />
+          {!estado && (
+            <div className="small font-weight-bold mb-1">
+              No hay buses cerca
+            </div>
+          )}
           {buses.map((bus) => (
             <LlegadaBus
               key={bus.id}
