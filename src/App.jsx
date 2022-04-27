@@ -1,15 +1,22 @@
-import './App.css';
-import { FormularioParadero } from './components/FormularioParadero';
+import { useState } from 'react';
+// import './App.css';
+import { FormBuscarParadero } from './components/FormBuscarParadero';
+import { Paradero } from './components/Paradero';
 
 
 function App() {
+
+  const [codigo, setCodigo] = useState('');
+
   return (
+
     <div className="App container">
+
       
-      <h1 className="text-center mb-5">Transporte APP</h1>
 
-      <FormularioParadero />
+      <FormBuscarParadero setCodigo={setCodigo} />
 
+      {codigo.length > 0 ? <Paradero codigo={codigo}/> : ""}
       
 
 
